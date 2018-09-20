@@ -57,9 +57,9 @@ i18nextWebpackPlugin.prototype.apply = compiler => {
       return;
     }
 
-    console.log(path.join(i18nConfig.src, `*.{${extensions.join(',')}}`));
+    console.log(path.join(i18nConfig.src, `*{${extensions.join(',')}}`));
     vfs
-      .src(path.join(i18nConfig.src, `*.{${extensions.join(',')}}`))
+      .src(path.join(i18nConfig.src, `*{${extensions.join(',')}}`))
       .pipe(scanner(i18nConfig.options, i18nConfig.transform, i18nConfig.flush))
       .pipe(vfs.dest(i18nConfig.dest))
       .on('end', () => callback());
